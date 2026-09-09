@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -16,28 +15,20 @@ import t3jk33 from "../assets/images/t3jk33.png";
 import t3jk333 from "../assets/images/t3jk333.png";
 import t4jk44 from "../assets/images/t4jk44.png";
 
-
 /* =========================================================
    PRODUCTS DATA
 ========================================================= */
 
 const products = [
-  {
-    image: wallPutty,
-    name: "Wall Putty",
-    slug: "wall-putty",
-  },
+  /* ---------------------------------------------------------
+     ROW 1
+     JK11 | JK22 | JK33 | JK44
+  --------------------------------------------------------- */
 
   {
     image: t1jk11,
     name: "Tile Adhesive T1 JK11",
     slug: "tile-adhesive-t1-jk11",
-  },
-
-  {
-    image: t1jk111,
-    name: "Tile Adhesive T1 JK111",
-    slug: "tile-adhesive-t1-jk111",
   },
 
   {
@@ -47,21 +38,32 @@ const products = [
   },
 
   {
-    image: t2jk222,
-    name: "Tile Adhesive T2 JK222",
-    slug: "tile-adhesive-t2-jk222",
-  },
-
-  {
-    image: tileGrout,
-    name: "Tile Grout",
-    slug: "tile-grout",
-  },
-
-  {
     image: t3jk33,
     name: "Tile Adhesive T3 JK33",
     slug: "tile-adhesive-t3-jk33",
+  },
+
+  {
+    image: t4jk44,
+    name: "Tile Adhesive T4 JK44",
+    slug: "tile-adhesive-t4-jk44",
+  },
+
+  /* ---------------------------------------------------------
+     ROW 2
+     JK111 | JK222 | JK333 | Wall Putty
+  --------------------------------------------------------- */
+
+  {
+    image: t1jk111,
+    name: "Tile Adhesive T1 JK111",
+    slug: "tile-adhesive-t1-jk111",
+  },
+
+  {
+    image: t2jk222,
+    name: "Tile Adhesive T2 JK222",
+    slug: "tile-adhesive-t2-jk222",
   },
 
   {
@@ -71,10 +73,15 @@ const products = [
   },
 
   {
-    image: epoxyGrout,
-    name: "Epoxy Grout",
-    slug: "epoxy-grout",
+    image: wallPutty,
+    name: "Wall Putty",
+    slug: "wall-putty",
   },
+
+  /* ---------------------------------------------------------
+     ROW 3
+     POP | Tile Grout | Epoxy Grout | Tile Cleaner
+  --------------------------------------------------------- */
 
   {
     image: pop,
@@ -83,18 +90,23 @@ const products = [
   },
 
   {
+    image: tileGrout,
+    name: "Tile Grout",
+    slug: "tile-grout",
+  },
+
+  {
+    image: epoxyGrout,
+    name: "Epoxy Grout",
+    slug: "epoxy-grout",
+  },
+
+  {
     image: tileCleaner,
     name: "Tile Cleaner",
     slug: "tile-cleaner",
   },
-
-  {
-    image: t4jk44,
-    name: "Tile Adhesive T4 JK44",
-    slug: "tile-adhesive-t4-jk44",
-  },
 ];
-
 
 /* =========================================================
    ANIMATION VARIANTS
@@ -114,6 +126,9 @@ const sectionVariants = {
   },
 };
 
+/* =========================================================
+   HEADING ANIMATION
+========================================================= */
 
 const headingContainer = {
   hidden: {},
@@ -124,7 +139,6 @@ const headingContainer = {
     },
   },
 };
-
 
 const headingItem = {
   hidden: {
@@ -143,6 +157,9 @@ const headingItem = {
   },
 };
 
+/* =========================================================
+   GALLERY ANIMATION
+========================================================= */
 
 const galleryContainer = {
   hidden: {},
@@ -153,7 +170,6 @@ const galleryContainer = {
     },
   },
 };
-
 
 const productVariants = {
   hidden: {
@@ -174,7 +190,6 @@ const productVariants = {
   },
 };
 
-
 /* =========================================================
    PRODUCT IMAGE COMPONENT
 ========================================================= */
@@ -183,18 +198,15 @@ const ProductImage = ({ image, name, slug }) => {
   return (
     <motion.div
       variants={productVariants}
-
       whileHover={{
         y: -8,
         scale: 1.015,
         boxShadow: "0 20px 40px rgba(62,49,24,0.12)",
       }}
-
       transition={{
         duration: 0.3,
         ease: "easeOut",
       }}
-
       className="rounded-2xl"
     >
       <Link
@@ -211,7 +223,6 @@ const ProductImage = ({ image, name, slug }) => {
           shadow-sm
         "
       >
-
         {/* =================================================
             PRODUCT IMAGE
         ================================================= */}
@@ -219,23 +230,19 @@ const ProductImage = ({ image, name, slug }) => {
         <motion.img
           src={image}
           alt={name}
-
           whileHover={{
             scale: 1.07,
           }}
-
           transition={{
             duration: 0.6,
             ease: "easeOut",
           }}
-
           className="
             w-full
             h-auto
             object-cover
           "
         />
-
 
         {/* =================================================
             PRODUCT NAME OVERLAY
@@ -245,11 +252,9 @@ const ProductImage = ({ image, name, slug }) => {
           initial={{
             opacity: 0.9,
           }}
-
           whileHover={{
             opacity: 1,
           }}
-
           className="
             absolute
             bottom-0
@@ -263,16 +268,13 @@ const ProductImage = ({ image, name, slug }) => {
             to-transparent
           "
         >
-
           <motion.p
             whileHover={{
               x: 4,
             }}
-
             transition={{
               duration: 0.25,
             }}
-
             className="
               text-[#F6F5F0]
               font-semibold
@@ -282,9 +284,7 @@ const ProductImage = ({ image, name, slug }) => {
           >
             {name}
           </motion.p>
-
         </motion.div>
-
 
         {/* =================================================
             GOLD HOVER LINE
@@ -294,16 +294,13 @@ const ProductImage = ({ image, name, slug }) => {
           initial={{
             width: 0,
           }}
-
           whileHover={{
             width: "35%",
           }}
-
           transition={{
             duration: 0.35,
             ease: "easeOut",
           }}
-
           className="
             absolute
             bottom-0
@@ -313,12 +310,10 @@ const ProductImage = ({ image, name, slug }) => {
             rounded-r-full
           "
         />
-
       </Link>
     </motion.div>
   );
 };
-
 
 /* =========================================================
    PRODUCTS SECTION
@@ -326,28 +321,21 @@ const ProductImage = ({ image, name, slug }) => {
 
 const Products = () => {
   return (
-
     <motion.section
       id="products"
-
       variants={sectionVariants}
-
       initial="hidden"
-
       whileInView="visible"
-
       viewport={{
         once: true,
         amount: 0.12,
       }}
-
       className="
         py-2
         sm:py-2
         bg-[#F6F5F0]
       "
     >
-
       <div
         className="
           max-w-7xl
@@ -358,23 +346,18 @@ const Products = () => {
           lg:px-5
         "
       >
-
         {/* =================================================
             HEADING
         ================================================= */}
 
         <motion.div
           variants={headingContainer}
-
           initial="hidden"
-
           whileInView="visible"
-
           viewport={{
             once: true,
             amount: 0.4,
           }}
-
           className="
             max-w-2xl
             mx-auto
@@ -382,18 +365,15 @@ const Products = () => {
             mb-14
           "
         >
-
           {/* =================================================
               BADGE
           ================================================= */}
 
           <motion.span
             variants={headingItem}
-
             whileHover={{
               scale: 1.04,
             }}
-
             className="
               inline-flex
               items-center
@@ -410,19 +390,16 @@ const Products = () => {
               mb-5
             "
           >
-
             <motion.span
               animate={{
                 scale: [1, 1.25, 1],
                 opacity: [1, 0.7, 1],
               }}
-
               transition={{
                 duration: 2,
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-
               className="
                 w-2
                 h-2
@@ -432,17 +409,14 @@ const Products = () => {
             />
 
             Our Products
-
           </motion.span>
 
-
           {/* =================================================
-              HEADING
+              MAIN HEADING
           ================================================= */}
 
           <motion.h2
             variants={headingItem}
-
             className="
               text-3xl
               sm:text-4xl
@@ -458,11 +432,9 @@ const Products = () => {
               whileHover={{
                 x: 4,
               }}
-
               transition={{
                 duration: 0.25,
               }}
-
               className="
                 inline-block
                 text-[#B68827]
@@ -470,9 +442,7 @@ const Products = () => {
             >
               better surfaces.
             </motion.span>
-
           </motion.h2>
-
 
           {/* =================================================
               DESCRIPTION
@@ -480,7 +450,6 @@ const Products = () => {
 
           <motion.p
             variants={headingItem}
-
             className="
               mt-5
               text-[#3E3118]/65
@@ -493,26 +462,29 @@ const Products = () => {
             our range of construction products is designed for
             reliable performance and professional results.
           </motion.p>
-
         </motion.div>
 
-
         {/* =================================================
-            MASONRY GALLERY
+            PRODUCT GALLERY
+
+            IMPORTANT:
+            Do NOT split the products using slice().
+
+            The normal CSS grid automatically places items:
+
+            JK11     JK22     JK33     JK44
+            JK111    JK222    JK333    Wall Putty
+            POP      Tile Grout  Epoxy Grout  Tile Cleaner
         ================================================= */}
 
         <motion.div
           variants={galleryContainer}
-
           initial="hidden"
-
           whileInView="visible"
-
           viewport={{
             once: true,
             amount: 0.1,
           }}
-
           className="
             grid
             grid-cols-2
@@ -520,94 +492,18 @@ const Products = () => {
             gap-4
           "
         >
-
-          {/* =================================================
-              COLUMN 1
-          ================================================= */}
-
-          <div className="grid gap-4">
-
-            {products.slice(0, 3).map((product) => (
-
-              <ProductImage
-                key={product.slug}
-                image={product.image}
-                name={product.name}
-                slug={product.slug}
-              />
-
-            ))}
-
-          </div>
-
-
-          {/* =================================================
-              COLUMN 2
-          ================================================= */}
-
-          <div className="grid gap-4">
-
-            {products.slice(3, 6).map((product) => (
-
-              <ProductImage
-                key={product.slug}
-                image={product.image}
-                name={product.name}
-                slug={product.slug}
-              />
-
-            ))}
-
-          </div>
-
-
-          {/* =================================================
-              COLUMN 3
-          ================================================= */}
-
-          <div className="grid gap-4">
-
-            {products.slice(6, 9).map((product) => (
-
-              <ProductImage
-                key={product.slug}
-                image={product.image}
-                name={product.name}
-                slug={product.slug}
-              />
-
-            ))}
-
-          </div>
-
-
-          {/* =================================================
-              COLUMN 4
-          ================================================= */}
-
-          <div className="grid gap-4">
-
-            {products.slice(9, 12).map((product) => (
-
-              <ProductImage
-                key={product.slug}
-                image={product.image}
-                name={product.name}
-                slug={product.slug}
-              />
-
-            ))}
-
-          </div>
-
+          {products.map((product) => (
+            <ProductImage
+              key={product.slug}
+              image={product.image}
+              name={product.name}
+              slug={product.slug}
+            />
+          ))}
         </motion.div>
-
       </div>
-
     </motion.section>
   );
 };
 
-
 export default Products;
-
