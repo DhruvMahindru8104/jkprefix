@@ -22,147 +22,617 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 /* =========================================================
+   SALESMAN IDS
+========================================================= */
+
+const salesmanIds = [
+  "S111",
+  "S222",
+  "S333",
+  "S444",
+  "S555",
+  "S666",
+  "S777",
+];
+
+/* =========================================================
    PRODUCT DATA
 ========================================================= */
 
 const products = [
   {
-    image: wallPutty,
-    name: "Wall Putty",
-    slug: "wall-putty",
-    category: "Wall Finishing",
-    description:
-      "High-quality wall putty designed to provide smooth, durable and beautiful wall surfaces.",
-    video: wallPuttyVideo,
-  },
-
-  {
-    image: t1jk11,
-    name: "Tile Adhesive T1 JK11",
+    id: 1,
+    name: "JKPRIFIX Grey Adhesive JK11",
     slug: "tile-adhesive-t1-jk11",
     category: "Tile Adhesive",
+    shortDescription:
+      "Strong grey tile adhesive for interior and exterior tile installation.",
     description:
-      "Reliable tile adhesive designed for strong bonding and easy application.",
+      "JKPRIFIX Grey Adhesive JK11 is designed for reliable installation of ceramic, clay, vitrified, basalt, porcelain tiles and natural stone on walls and floors. It is also suitable for wet areas such as swimming pools, saunas, water bodies and washrooms.",
+    image: t1jk11,
     video: tileAdhesiveVideo,
+    tagline: "Strong Bond Flawless Finish",
+    color: "Grey",
+    packSize: "20 kg",
+    standard: null,
+    benefits: [
+      "Strong adhesion",
+      "Easy application",
+      "Suitable for interior and exterior use",
+      "Suitable for floor and wall tiles",
+      "Suitable for wet areas",
+    ],
+    applications: [
+      "Internal and external floors",
+      "Internal and external walls",
+      "Ceramic tiles",
+      "Clay tiles",
+      "Vitrified tiles",
+      "Basalt tiles",
+      "Porcelain tiles",
+      "Natural stone",
+      "Swimming pools",
+      "Saunas",
+      "Water bodies",
+      "Washrooms",
+    ],
+    technicalProperties: {
+      workingTemperature: "27°C",
+      potLife: "2 hours",
+      timeToHeavyTraffic: "16-24 hours",
+      coverage: "Approx 45 to 55 sq.ft. per 20 kg pack",
+      trowelSize: "6mm x 6mm square notched trowel",
+      bedThickness: "3mm",
+      note: "Actual coverage depends on substrate condition and method of application",
+    },
   },
 
   {
-    image: t1jk111,
-    name: "Tile Adhesive T1 JK111",
-    slug: "tile-adhesive-t1-jk111",
-    category: "Tile Adhesive",
-    description:
-      "Quality tile adhesive providing excellent adhesion and dependable performance.",
-    video: tileAdhesiveVideo,
-  },
-
-  {
-    image: t2jk22,
-    name: "Tile Adhesive T2 JK22",
+    id: 2,
+    name: "JKPRIFIX Grey Adhesive JK22",
     slug: "tile-adhesive-t2-jk22",
     category: "Tile Adhesive",
+    shortDescription:
+      "Reliable grey tile adhesive for vitrified and glass mosaic tile installation.",
     description:
-      "Strong tile adhesive suitable for reliable tile installation on multiple surfaces.",
+      "JKPRIFIX Grey Adhesive JK22 is formulated for strong and reliable tile installation on cement-based substrates. It is suitable for interior floor and wall applications, exterior floor applications and wet or submerged areas.",
+    image: t2jk22,
     video: tileAdhesiveVideo,
+    tagline: "Strong Bond Perfect Finish",
+    color: "Grey",
+    packSize: "20 kg",
+    standard: "Conforms to Type 2T, IS 15477:2019",
+    benefits: [
+      "Strong adhesion",
+      "Reliable bonding",
+      "Good workability",
+      "Suitable for vitrified tiles",
+      "Suitable for glass mosaic tiles",
+      "Suitable for wet and submerged areas",
+    ],
+    applications: [
+      "Interior floors",
+      "Interior walls",
+      "Exterior floors",
+      "Vitrified tiles",
+      "Fully vitrified tiles",
+      "Glass mosaic tiles",
+      "Wet areas",
+      "Submerged areas",
+      "Cement-based substrates",
+    ],
+    technicalProperties: {
+      workingTemperature: "27°C",
+      potLife: "2 hours",
+      timeToHeavyTraffic: "16-24 hours",
+      coverage: "Approx 45 to 55 sq.ft. per 20 kg pack",
+      trowelSize: "6mm x 6mm square notched trowel",
+      bedThickness: "3mm",
+      note: "Actual coverage depends on substrate condition and method of application",
+    },
   },
 
   {
-    image: t2jk222,
-    name: "Tile Adhesive T2 JK222",
-    slug: "tile-adhesive-t2-jk222",
-    category: "Tile Adhesive",
-    description:
-      "High-performance adhesive designed for secure and long-lasting tile installation.",
-    video: tileAdhesiveVideo,
-  },
-
-  {
-    image: tileGrout,
-    name: "Tile Grout",
-    slug: "tile-grout",
-    category: "Grouting",
-    description:
-      "Tile grout designed to provide a clean, durable and professional finish between tiles.",
-  },
-
-  {
-    image: t3jk33,
-    name: "Tile Adhesive T3 JK33",
+    id: 3,
+    name: "JKPRIFIX Grey Adhesive JK33",
     slug: "tile-adhesive-t3-jk33",
     category: "Tile Adhesive",
+    shortDescription:
+      "High-performance grey tile adhesive for professional tile installation.",
     description:
-      "Advanced tile adhesive designed for strong bonding and long-lasting performance.",
+      "JKPRIFIX Grey Adhesive JK33 is designed to provide dependable performance for interior and exterior tile installation. It is suitable for ceramic, clay, vitrified, basalt, porcelain tiles and natural stone, including wet-area applications.",
+    image: t3jk33,
     video: tileAdhesiveVideo,
+    tagline: "Strong Bond Lasting Finish",
+    color: "Grey",
+    packSize: "20 kg",
+    standard: "Conforms to Type 2T, IS 15477:2019",
+    benefits: [
+      "Strong bonding",
+      "Durable performance",
+      "Good workability",
+      "Suitable for interior and exterior use",
+      "Suitable for floor and wall tiles",
+      "Suitable for wet areas",
+    ],
+    applications: [
+      "Internal floors",
+      "External floors",
+      "Internal walls",
+      "External walls",
+      "Ceramic tiles",
+      "Clay tiles",
+      "Vitrified tiles",
+      "Basalt tiles",
+      "Porcelain tiles",
+      "Natural stone",
+      "Swimming pools",
+      "Saunas",
+      "Water bodies",
+      "Washrooms",
+    ],
+    technicalProperties: {
+      workingTemperature: "27°C",
+      potLife: "2 hours",
+      timeToHeavyTraffic: "16-24 hours",
+      coverage: "Approx 45 to 55 sq.ft. per 20 kg pack",
+      trowelSize: "6mm x 6mm square notched trowel",
+      bedThickness: "3mm",
+      note: "Actual coverage depends on substrate condition and method of application",
+    },
   },
 
   {
-    image: t3jk333,
-    name: "Tile Adhesive T3 JK333",
-    slug: "tile-adhesive-t3-jk333",
-    category: "Tile Adhesive",
-    description:
-      "Premium adhesive solution for dependable tile installation and professional results.",
-    video: tileAdhesiveVideo,
-  },
-
-  {
-    image: epoxyGrout,
-    name: "Epoxy Grout",
-    slug: "epoxy-grout",
-    category: "Grouting",
-    description:
-      "Durable epoxy grout designed for strong, clean and long-lasting tile joints.",
-  },
-
-  {
-    image: pop,
-    name: "POP",
-    slug: "pop",
-    category: "Construction Material",
-    description:
-      "POP solution suitable for smooth finishing and interior construction applications.",
-  },
-
-  {
-    image: tileCleaner,
-    name: "Tile Cleaner",
-    slug: "tile-cleaner",
-    category: "Tile Care",
-    description:
-      "Tile cleaning solution designed to help maintain clean and attractive tile surfaces.",
-  },
-
-  {
-    image: t4jk44,
-    name: "Tile Adhesive T4 JK44",
+    id: 4,
+    name: "JKPRIFIX Grey Adhesive JK44",
     slug: "tile-adhesive-t4-jk44",
     category: "Tile Adhesive",
+    shortDescription:
+      "High-performance grey tile adhesive designed for large-format and elevation applications.",
     description:
-      "High-strength tile adhesive designed for demanding tile installation applications.",
+      "JKPRIFIX Grey Adhesive JK44 is a high-performance tile adhesive designed for professional tile fixing. It is suitable for large-format thin tiles on walls and floors and is particularly suited for elevation applications.",
+    image: t4jk44,
     video: tileAdhesiveVideo,
+    tagline: "Built for Strength Made for Last",
+    color: "Grey",
+    packSize: "20 kg",
+    standard: "Conforms to Type 4T, IS 15477:2019",
+    benefits: [
+      "High bonding strength",
+      "Excellent workability",
+      "Professional grade",
+      "Suitable for large-format tiles",
+      "Suitable for elevation applications",
+      "Durable performance",
+    ],
+    applications: [
+      "Internal floors",
+      "External floors",
+      "Internal walls",
+      "External walls",
+      "Large-format thin tiles",
+      "Professional tile installation",
+      "Elevation applications",
+      "Diversified tile materials and surfaces",
+    ],
+    technicalProperties: {
+      workingTemperature: "27°C",
+      potLife: "2 hours",
+      timeToHeavyTraffic: "16-24 hours",
+      coverage: "Approx 45 to 55 sq.ft. per 20 kg pack",
+      trowelSize: "6mm x 6mm square notched trowel",
+      bedThickness: "3mm",
+      note: "Actual coverage depends on substrate condition and method of application",
+    },
+  },
+
+  {
+    id: 5,
+    name: "JKPRIFIX White Adhesive JK111",
+    slug: "tile-adhesive-t1-jk111",
+    category: "Tile Adhesive",
+    shortDescription:
+      "White tile adhesive for reliable ceramic, vitrified and porcelain tile installation.",
+    description:
+      "JKPRIFIX White Adhesive JK111 is designed for reliable tile fixing where a clean white base is preferred. It is suitable for ceramic, clay, vitrified, basalt, porcelain tiles and natural stone.",
+    image: t1jk111,
+    video: tileAdhesiveVideo,
+    tagline: "Strong Bond Lasting Finish",
+    color: "Orange/White",
+    packSize: "20 kg",
+    standard: "CTTE, Conforms to Type 2T, IS 15477:2019",
+    benefits: [
+      "Strong adhesion",
+      "Clean white base",
+      "Easy application",
+      "Good workability",
+      "Suitable for interior and exterior use",
+    ],
+    applications: [
+      "Internal floors",
+      "External floors",
+      "Internal walls",
+      "External walls",
+      "Ceramic tiles",
+      "Clay tiles",
+      "Vitrified tiles",
+      "Basalt tiles",
+      "Porcelain tiles",
+      "Natural stone",
+      "Decorative tiles",
+      "Swimming pools",
+      "Saunas",
+      "Water bodies",
+      "Washrooms",
+    ],
+    technicalProperties: {
+      workingTemperature: "27°C",
+      potLife: "2 hours",
+      timeToHeavyTraffic: "16-24 hours",
+      coverage: "Approx 45 to 55 sq.ft. per 20 kg pack",
+      trowelSize: "6mm x 6mm square notched trowel",
+      bedThickness: "3mm",
+      note: "Actual coverage depends on substrate condition and method of application",
+    },
+  },
+
+  {
+    id: 6,
+    name: "JKPRIFIX White Adhesive JK222",
+    slug: "tile-adhesive-t2-jk222",
+    category: "Tile Adhesive",
+    shortDescription:
+      "White tile adhesive for professional and large-format tile installation.",
+    description:
+      "JKPRIFIX White Adhesive JK222 is formulated for reliable tile bonding and professional installation. It is suitable for large-format thin tiles, elevation applications and ceramic, vitrified and porcelain tiles.",
+    image: t2jk222,
+    video: tileAdhesiveVideo,
+    tagline: "Built for Strength Made for Last",
+    color: "White",
+    packSize: "20 kg",
+    standard: "Conforms to Type 2T, IS 15477:2019",
+    benefits: [
+      "Strong bonding",
+      "Clean white appearance",
+      "Excellent workability",
+      "Professional performance",
+      "Suitable for large-format tiles",
+      "Durable performance",
+    ],
+    applications: [
+      "Internal floors",
+      "External floors",
+      "Internal walls",
+      "External walls",
+      "Large-format thin tiles",
+      "Ceramic tiles",
+      "Vitrified tiles",
+      "Porcelain tiles",
+      "Elevation applications",
+      "Professional installations",
+    ],
+    technicalProperties: {
+      workingTemperature: "27°C",
+      potLife: "2 hours",
+      timeToHeavyTraffic: "16-24 hours",
+      coverage: "Approx 45 to 55 sq.ft. per 20 kg pack",
+      trowelSize: "6mm x 6mm square notched trowel",
+      bedThickness: "3mm",
+      note: "Actual coverage depends on substrate condition and method of application",
+    },
+  },
+
+  {
+    id: 7,
+    name: "JKPRIFIX White Adhesive JK333",
+    slug: "tile-adhesive-t3-jk333",
+    category: "Tile Adhesive (Epoxy PU Based)",
+    shortDescription:
+      "Two-component epoxy PU based adhesive for demanding tile and stone installations.",
+    description:
+      "JKPRIFIX White Adhesive JK333 is a two-component Epoxy PU based tile adhesive designed for installation of all types of tiles, engineered stones, glass tiles and metal tiles on highly deformable, expandable, absorbent and non-absorbent substrates.",
+    image: t3jk333,
+    video: tileAdhesiveVideo,
+    tagline: "Built for Strength Made for Last",
+    color: "White",
+    packSize: "20 kg",
+    standard: "Conforms to Type 3T, IS 15477:2019",
+    benefits: [
+      "High bonding strength",
+      "Two-component Epoxy PU based system",
+      "Suitable for highly deformable substrates",
+      "Suitable for absorbent and non-absorbent surfaces",
+      "Professional performance",
+      "Wide range of applications",
+    ],
+    applications: [
+      "Interior floors",
+      "Exterior floors",
+      "Interior walls",
+      "Exterior walls",
+      "Ceramic tiles",
+      "Vitrified tiles",
+      "Semi-vitrified tiles",
+      "Precast terrazzo",
+      "Engineered stone",
+      "Glass tiles",
+      "Metal tiles",
+      "Quartz",
+      "Natural stones",
+      "Marble slim tiles",
+      "Composite stones",
+      "Nano stones",
+      "Artificial stones",
+      "Engineered stones",
+    ],
+    compatibleSubstrates: [
+      "Metal surfaces",
+      "Wood and plywood",
+      "Rubber",
+      "PVC",
+      "WPC",
+      "Epoxy resin-based surfaces",
+      "PU resin-based surfaces",
+      "Cement-based plaster",
+      "Concrete",
+      "Screed",
+    ],
+    technicalProperties: {
+      workingTemperature: null,
+      potLife: null,
+      timeToHeavyTraffic: null,
+      coverage: null,
+      trowelSize: null,
+      bedThickness: null,
+      note: "Actual coverage depends on substrate condition and method of application",
+    },
+  },
+
+  {
+    id: 8,
+    name: "JKPRIFIX Wall Putty",
+    slug: "wall-putty",
+    category: "Wall Putty",
+    shortDescription:
+      "Polymer modified white cement based water-resistant wall putty for smooth and durable surfaces.",
+    description:
+      "JKPRIFIX Wall Putty is a polymer modified white cement based water-resistant fine wall putty for concrete and mortar walls and ceilings. It provides superior adhesive strength and durability and does not require water curing.",
+    image: wallPutty,
+    video: wallPuttyVideo,
+    tagline: "Strong Bond Lasting Finish",
+    packSize: "20 kg",
+    standard: "Conforms to IS: 63(2006)",
+    benefits: [
+      "Suitable for all kinds of paint",
+      "Provides a smooth and durable surface",
+      "Superior adhesive strength",
+      "Water resistant",
+      "Does not require water curing",
+      "Can be used as a filler and leveller",
+    ],
+    applications: [
+      "Concrete walls",
+      "Mortar walls",
+      "Interior walls",
+      "Exterior walls",
+      "Ceilings",
+      "Surface preparation",
+      "Before painting",
+      "Filler and leveller in paint systems",
+    ],
+    technicalProperties: {
+      coverage: "Approx 0.2-2.5 sq.ft./kg/mm",
+      shelfLife: "12 months",
+    },
+  },
+
+  {
+    id: 9,
+    name: "JKPRIFIX Premium Gypsum Plaster",
+    slug: "pop",
+    category: "Gypsum Plaster",
+    shortDescription:
+      "Ready-mixed polymer-modified plaster for efficient interior and exterior finishing.",
+    description:
+      "JKPRIFIX Premium Gypsum Plaster is a ready-mixed plaster modified with high-quality polymers. It offers excellent coverage and is designed for both external and internal surfaces including brick, cement block, sand plaster, old scrap and RCC surfaces.",
+    image: pop,
+    tagline: "Strong Bond Lasting Finish",
+    packSize: "20 kg",
+    standard: "Conforms to IS: 1542-1992",
+    benefits: [
+      "Excellent coverage",
+      "Durable finish",
+      "Good bonding strength",
+      "Self-curing properties",
+      "Faster application",
+      "Reduced surface preparation",
+    ],
+    applications: [
+      "Internal surfaces",
+      "External surfaces",
+      "Brick surfaces",
+      "Cement block surfaces",
+      "Sand plaster",
+      "Old scrap surfaces",
+      "RCC surfaces",
+      "Wall finishing",
+      "Surface preparation",
+    ],
+    technicalProperties: {
+      coverage: "Approx 20-22 sq.ft./40kg at 12mm bed thickness",
+      shelfLife: "12 months",
+    },
+  },
+
+  {
+    id: 10,
+    name: "JKPRIFIX Tile Grout",
+    slug: "tile-grout",
+    category: "Tile Grout",
+    shortDescription:
+      "Water-resistant polymer-modified grout for clean, durable and non-cracking tile joints.",
+    description:
+      "JKPRIFIX Tile Grout is a water-resistant, non-cracking and non-shrink polymer-modified cementitious tile joint filler designed for grouting glazed wall tiles, mosaics, vitrified, fully vitrified, floor and industrial floor tiles.",
+    image: tileGrout,
+    tagline: "Strong Bond Lasting Finish",
+    packSize: "1 kg",
+    standard: "Conforms to EN 13888, IS 17190:2020 CG1",
+    benefits: [
+      "Water resistant",
+      "Non-cracking",
+      "Non-shrink",
+      "Hard-wearing tile joints",
+      "Non-dusting tile joints",
+      "Good workability",
+      "Long-lasting tile joints",
+    ],
+    applications: [
+      "Glazed wall tiles",
+      "Mosaic tiles",
+      "Vitrified tiles",
+      "Fully vitrified tiles",
+      "Floor tiles",
+      "Industrial floor tiles",
+      "Tile joints",
+    ],
+    features: [
+      "Effectively fills gaps and levels itself",
+      "Provides hard-wearing and non-dusting tile joints",
+      "Firmly holds tiles together",
+      "Suitable for 1mm to 3mm joint width",
+      "Tile admix can be mixed for improved performance",
+      "Available in sanded and unsanded form",
+    ],
+  },
+
+  {
+    id: 11,
+    packSizes: ["1Kg", "5Kg"],
+    name: "JKPRIFIX Epoxy Tile Grout",
+    slug: "epoxy-grout",
+    category: "Tile Grout",
+    shortDescription:
+      "Water and shock-resistant epoxy grout for durable and hygienic tile joints.",
+    description:
+      "JKPRIFIX Epoxy Tile Grout is a hygienic, easy-to-clean, water and shock-resistant three-component epoxy resin based grout. It provides good bond strength and is suitable for interior and covered exterior floor and wall joints.",
+    image: epoxyGrout,
+    tagline: "Strong Bond Lasting Finish",
+    standard: "Conforms to EN 13888, IS 17190:2020 RG2",
+    benefits: [
+      "Water resistant",
+      "Shock resistant",
+      "Easy to clean",
+      "Hygienic",
+      "Stain free",
+      "Colour fast",
+      "Good bond strength",
+      "Durable performance",
+    ],
+    applications: [
+      "Ceramic tiles",
+      "Vitreous tiles",
+      "Semi-vitreous tiles",
+      "Glass mosaic tiles",
+      "Precast terrazzo",
+      "Engineered stone floors",
+      "Natural stones",
+      "Institutional kitchens",
+      "Commercial kitchens",
+      "Cafeterias",
+      "Residential facilities",
+      "Rest rooms",
+      "Schools",
+      "Swimming pools",
+      "Saunas",
+      "Water bodies",
+      "Washrooms",
+    ],
+  },
+
+  {
+    id: 12,
+    name: "JKPRIFIX High Performance Tile Cleaner",
+    slug: "tile-cleaner",
+    category: "Tile Cleaner",
+    shortDescription:
+      "Ready-to-use fast-acting tile cleaner for interior and exterior cleaning applications.",
+    description:
+      "JKPRIFIX High Performance Tile Cleaner is a ready-to-use, fast-acting cleaning solution designed to remove everyday spills, dirt, grease and cement residue from a wide range of tile surfaces. It is a non-acidic cleaner specially recommended for natural stone and marble.",
+    image: tileCleaner,
+    tagline: "Strong Bond Lasting Finish",
+    packSizes: ["100ml", "250ml", "500ml", "1 Ltr", "5 Ltr"],
+    benefits: [
+      "Ready to use",
+      "Fast acting",
+      "Helps remove dirt",
+      "Helps remove grease",
+      "Helps remove cement residue",
+      "Non-acidic",
+      "Suitable for natural stone and marble",
+      "Helps maintain natural appearance",
+    ],
+    applications: [
+      "Unglazed ceramic tiles",
+      "Glass tiles",
+      "Vitrified tiles",
+      "Glass mosaic tiles",
+      "Glazed ceramic tiles",
+      "Porcelain tiles",
+      "Natural stone",
+      "Marble",
+      "Interior cleaning",
+      "Exterior cleaning",
+    ],
+    technicalProperties: {
+      appearance: "Ocean Blue liquid",
+      specificGravity: "1.02",
+      pH: "5-6",
+    },
   },
 ];
 
 /* =========================================================
-   PRODUCT DETAILS PAGE
+   CHECK ICON
+========================================================= */
+
+const CheckIcon = () => (
+  <span
+    className="
+      flex
+      items-center
+      justify-center
+      w-6
+      h-6
+      rounded-full
+      bg-[#B68827]
+      text-[#F6F5F0]
+      text-xs
+      shrink-0
+    "
+  >
+    ✓
+  </span>
+);
+
+/* =========================================================
+   PRODUCT DETAILS
 ========================================================= */
 
 const ProductDetails = () => {
   const { slug } = useParams();
 
-  const product = products.find(
-    (item) => item.slug === slug
-  );
-
-  /* =======================================================
-     STATES
-  ======================================================= */
+  const product = products.find((item) => item.slug === slug);
 
   const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
+  /* CUSTOMER DETAILS */
+
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
+  const [salesmanId, setSalesmanId] = useState("");
+  const [customerGST, setCustomerGST] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   /* =======================================================
      WHATSAPP
@@ -171,26 +641,33 @@ const ProductDetails = () => {
   const handleWhatsApp = (e) => {
     e.preventDefault();
 
-    if (!customerName.trim() || !customerPhone.trim()) {
-      alert("Please enter your name and phone number.");
+    if (
+      !customerName.trim() ||
+      !customerPhone.trim() ||
+      !salesmanId ||
+      !quantity
+    ) {
+      alert("Please fill all required details.");
+      return;
+    }
+
+    if (customerPhone.length !== 10) {
+      alert("Please enter a valid 10-digit phone number.");
       return;
     }
 
     const message = `
-Hello JK Prifix,
-
-I am interested in your product.
+Hello JKPRIFIX Team,
 
 Product: ${product.name}
-Category: ${product.category}
+Quantity: ${quantity}
 
-Customer Name: ${customerName}
-Phone Number: ${customerPhone}
+Customer: ${customerName}
+Phone: ${customerPhone}
+GST: ${customerGST.trim() || "N/A"}
+Salesman ID: ${salesmanId}
 
-Product Details:
-${product.description}
-
-Please share more information about this product and its price.
+Please share the price and availability.
 
 Thank you.
     `.trim();
@@ -203,10 +680,14 @@ Thank you.
 
     window.open(whatsappURL, "_blank");
 
-    setIsBuyModalOpen(false);
+    /* RESET FORM */
 
+    setIsBuyModalOpen(false);
     setCustomerName("");
     setCustomerPhone("");
+    setSalesmanId("");
+    setCustomerGST("");
+    setQuantity(1);
   };
 
   /* =======================================================
@@ -229,7 +710,6 @@ Thank you.
           "
         >
           <div className="text-center">
-
             <h1
               className="
                 text-4xl
@@ -240,12 +720,7 @@ Thank you.
               Product Not Found
             </h1>
 
-            <p
-              className="
-                mt-4
-                text-[#3E3118]/65
-              "
-            >
+            <p className="mt-4 text-[#3E3118]/65">
               The product you are looking for does not exist.
             </p>
 
@@ -268,7 +743,6 @@ Thank you.
             >
               Back to Home
             </Link>
-
           </div>
         </section>
 
@@ -276,10 +750,6 @@ Thank you.
       </>
     );
   }
-
-  /* =======================================================
-     MAIN PAGE
-  ======================================================= */
 
   return (
     <>
@@ -303,10 +773,7 @@ Thank you.
             lg:px-5
           "
         >
-
-          {/* =================================================
-              BACK BUTTON
-          ================================================= */}
+          {/* BACK BUTTON */}
 
           <Link
             to="/"
@@ -328,7 +795,7 @@ Thank you.
             >
               <path
                 fillRule="evenodd"
-                d="M17 10a.75.75 0 01-.75.75H5.56l3.22 3.22a.75.75 0 11-1.06 1.06l-4.5-4.5a.75.75 0 010-1.06l4.5-4.5a.75.75 0 111.06 1.06l-3.22 3.22h10.69A.75.75 0 0117 10z"
+                d="M17 10a.75.75 0 0 1-.75.75H5.56l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 1 1 1.06 1.06l-3.22 3.22h10.69A.75.75 0 0 1 17 10Z"
                 clipRule="evenodd"
               />
             </svg>
@@ -336,9 +803,7 @@ Thank you.
             Back to Products
           </Link>
 
-          {/* =================================================
-              PRODUCT SECTION
-          ================================================= */}
+          {/* PRODUCT HERO */}
 
           <div
             className="
@@ -346,13 +811,10 @@ Thank you.
               lg:grid-cols-2
               gap-12
               lg:gap-20
-              items-center
+              items-start
             "
           >
-
-            {/* =================================================
-                PRODUCT IMAGE
-            ================================================= */}
+            {/* PRODUCT IMAGE */}
 
             <div
               className="
@@ -362,6 +824,8 @@ Thank you.
                 border-[#B68827]/20
                 overflow-hidden
                 shadow-sm
+                lg:sticky
+                lg:top-28
               "
             >
               <img
@@ -376,14 +840,9 @@ Thank you.
               />
             </div>
 
-            {/* =================================================
-                PRODUCT INFORMATION
-            ================================================= */}
+            {/* PRODUCT INFORMATION */}
 
             <div>
-
-              {/* CATEGORY */}
-
               <span
                 className="
                   inline-flex
@@ -402,8 +861,6 @@ Thank you.
                 {product.category}
               </span>
 
-              {/* PRODUCT NAME */}
-
               <h1
                 className="
                   mt-6
@@ -418,7 +875,18 @@ Thank you.
                 {product.name}
               </h1>
 
-              {/* DESCRIPTION */}
+              {product.tagline && (
+                <p
+                  className="
+                    mt-4
+                    text-lg
+                    font-medium
+                    text-[#B68827]
+                  "
+                >
+                  {product.tagline}
+                </p>
+              )}
 
               <p
                 className="
@@ -432,84 +900,328 @@ Thank you.
                 {product.description}
               </p>
 
-              {/* DIVIDER */}
-
-              <div
-                className="
-                  h-px
-                  bg-[#B68827]/20
-                  my-8
-                "
-              />
-
-              {/* BENEFITS */}
-
-              <h2
-                className="
-                  text-xl
-                  font-semibold
-                  text-[#3E3118]
-                "
-              >
-                Product Benefits
-              </h2>
-
-              <div
-                className="
-                  grid
-                  sm:grid-cols-2
-                  gap-4
-                  mt-5
-                "
-              >
-
-                {[
-                  "Strong Bond",
-                  "Excellent Adhesion",
-                  "Easy to Apply",
-                  "Water Resistant",
-                  "High Strength",
-                  "Long Lasting Performance",
-                ].map((feature) => (
-
-                  <div
-                    key={feature}
-                    className="
-                      flex
-                      items-center
-                      gap-3
-                      text-[#3E3118]/75
-                    "
-                  >
-
-                    <span
+              {(product.color ||
+                product.packSize ||
+                product.standard ||
+                product.packSizes) && (
+                <div
+                  className="
+                    grid
+                    sm:grid-cols-2
+                    gap-3
+                    mt-8
+                  "
+                >
+                  {product.color && (
+                    <div
                       className="
-                        flex
-                        items-center
-                        justify-center
-                        w-6
-                        h-6
-                        rounded-full
-                        bg-[#B68827]
-                        text-[#F6F5F0]
-                        text-xs
-                        shrink-0
+                        rounded-2xl
+                        bg-white
+                        border
+                        border-[#B68827]/20
+                        p-4
                       "
                     >
-                      ✓
-                    </span>
+                      <p className="text-xs text-[#3E3118]/50">
+                        Color
+                      </p>
 
-                    {feature}
+                      <p className="mt-1 font-medium text-[#3E3118]">
+                        {product.color}
+                      </p>
+                    </div>
+                  )}
 
+                  {product.packSize && (
+                    <div
+                      className="
+                        rounded-2xl
+                        bg-white
+                        border
+                        border-[#B68827]/20
+                        p-4
+                      "
+                    >
+                      <p className="text-xs text-[#3E3118]/50">
+                        Pack Size
+                      </p>
+
+                      <p className="mt-1 font-medium text-[#3E3118]">
+                        {product.packSize}
+                      </p>
+                    </div>
+                  )}
+
+                  {product.standard && (
+                    <div
+                      className="
+                        rounded-2xl
+                        bg-white
+                        border
+                        border-[#B68827]/20
+                        p-4
+                        sm:col-span-2
+                      "
+                    >
+                      <p className="text-xs text-[#3E3118]/50">
+                        Standard
+                      </p>
+
+                      <p className="mt-1 font-medium text-[#3E3118]">
+                        {product.standard}
+                      </p>
+                    </div>
+                  )}
+
+                  {product.packSizes && (
+                    <div
+                      className="
+                        rounded-2xl
+                        bg-white
+                        border
+                        border-[#B68827]/20
+                        p-4
+                        sm:col-span-2
+                      "
+                    >
+                      <p className="text-xs text-[#3E3118]/50">
+                        Available Pack Sizes
+                      </p>
+
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        {product.packSizes.map((size) => (
+                          <span
+                            key={size}
+                            className="
+                              px-3
+                              py-1.5
+                              rounded-full
+                              bg-[#B68827]/10
+                              border
+                              border-[#B68827]/20
+                              text-sm
+                              text-[#3E3118]
+                            "
+                          >
+                            {size}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div className="h-px bg-[#B68827]/20 my-8" />
+
+              {product.benefits?.length > 0 && (
+                <>
+                  <h2 className="text-xl font-semibold text-[#3E3118]">
+                    Product Benefits
+                  </h2>
+
+                  <div
+                    className="
+                      grid
+                      sm:grid-cols-2
+                      gap-4
+                      mt-5
+                    "
+                  >
+                    {product.benefits.map((benefit) => (
+                      <div
+                        key={benefit}
+                        className="
+                          flex
+                          items-center
+                          gap-3
+                          text-[#3E3118]/75
+                        "
+                      >
+                        <CheckIcon />
+
+                        <span>{benefit}</span>
+                      </div>
+                    ))}
                   </div>
+                </>
+              )}
 
-                ))}
+              {product.applications?.length > 0 && (
+                <div className="mt-10">
+                  <h2 className="text-xl font-semibold text-[#3E3118]">
+                    Applications
+                  </h2>
 
-              </div>
+                  <div
+                    className="
+                      grid
+                      sm:grid-cols-2
+                      gap-4
+                      mt-5
+                    "
+                  >
+                    {product.applications.map((application) => (
+                      <div
+                        key={application}
+                        className="
+                          flex
+                          items-start
+                          gap-3
+                          text-[#3E3118]/75
+                        "
+                      >
+                        <CheckIcon />
 
-              {/* =================================================
-                  BUTTONS
-              ================================================= */}
+                        <span>{application}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {product.compatibleSubstrates?.length > 0 && (
+                <div className="mt-10">
+                  <h2 className="text-xl font-semibold text-[#3E3118]">
+                    Compatible Substrates
+                  </h2>
+
+                  <div
+                    className="
+                      grid
+                      sm:grid-cols-2
+                      gap-4
+                      mt-5
+                    "
+                  >
+                    {product.compatibleSubstrates.map((substrate) => (
+                      <div
+                        key={substrate}
+                        className="
+                          flex
+                          items-start
+                          gap-3
+                          text-[#3E3118]/75
+                        "
+                      >
+                        <CheckIcon />
+
+                        <span>{substrate}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {product.features?.length > 0 && (
+                <div className="mt-10">
+                  <h2 className="text-xl font-semibold text-[#3E3118]">
+                    Features
+                  </h2>
+
+                  <div
+                    className="
+                      grid
+                      sm:grid-cols-2
+                      gap-4
+                      mt-5
+                    "
+                  >
+                    {product.features.map((feature) => (
+                      <div
+                        key={feature}
+                        className="
+                          flex
+                          items-start
+                          gap-3
+                          text-[#3E3118]/75
+                        "
+                      >
+                        <CheckIcon />
+
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {product.technicalProperties &&
+                Object.values(product.technicalProperties).some(
+                  (value) => value !== null && value !== undefined
+                ) && (
+                  <div className="mt-10">
+                    <h2 className="text-xl font-semibold text-[#3E3118]">
+                      Technical Properties
+                    </h2>
+
+                    <div
+                      className="
+                        mt-5
+                        rounded-2xl
+                        overflow-hidden
+                        border
+                        border-[#B68827]/20
+                        bg-white
+                      "
+                    >
+                      {Object.entries(product.technicalProperties).map(
+                        ([key, value]) => {
+                          if (
+                            value === null ||
+                            value === undefined ||
+                            value === ""
+                          ) {
+                            return null;
+                          }
+
+                          const formattedKey = key
+                            .replace(/([A-Z])/g, " $1")
+                            .replace(/^./, (str) => str.toUpperCase());
+
+                          return (
+                            <div
+                              key={key}
+                              className="
+                                grid
+                                grid-cols-1
+                                sm:grid-cols-2
+                                gap-2
+                                px-5
+                                py-4
+                                border-b
+                                last:border-b-0
+                                border-[#3E3118]/10
+                              "
+                            >
+                              <span
+                                className="
+                                  text-sm
+                                  font-medium
+                                  text-[#3E3118]/55
+                                "
+                              >
+                                {formattedKey}
+                              </span>
+
+                              <span
+                                className="
+                                  text-sm
+                                  text-[#3E3118]
+                                  sm:text-right
+                                "
+                              >
+                                {value}
+                              </span>
+                            </div>
+                          );
+                        }
+                      )}
+                    </div>
+                  </div>
+                )}
+
+              {/* BUTTONS */}
 
               <div
                 className="
@@ -520,9 +1232,6 @@ Thank you.
                   mt-10
                 "
               >
-
-                {/* BUY NOW */}
-
                 <button
                   onClick={() => setIsBuyModalOpen(true)}
                   className="
@@ -541,7 +1250,6 @@ Thank you.
                     font-medium
                   "
                 >
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -556,16 +1264,11 @@ Thank you.
                   </svg>
 
                   Buy Now
-
                 </button>
-
-                {/* VIDEO BUTTON */}
 
                 {product.video && (
                   <button
-                    onClick={() =>
-                      setIsVideoModalOpen(true)
-                    }
+                    onClick={() => setIsVideoModalOpen(true)}
                     className="
                       px-8
                       h-12
@@ -582,7 +1285,6 @@ Thank you.
                       font-medium
                     "
                   >
-
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -593,16 +1295,11 @@ Thank you.
                     </svg>
 
                     Watch Video
-
                   </button>
                 )}
-
               </div>
-
             </div>
-
           </div>
-
         </div>
       </main>
 
@@ -622,34 +1319,30 @@ Thank you.
             bg-[#3E3118]/60
             backdrop-blur-sm
             px-5
+            py-8
           "
-          onClick={() =>
-            setIsBuyModalOpen(false)
-          }
+          onClick={() => setIsBuyModalOpen(false)}
         >
-
           <div
             className="
               relative
               w-full
               max-w-md
+              max-h-[90vh]
+              overflow-y-auto
               rounded-3xl
               bg-[#F6F5F0]
               p-7
               sm:p-9
               shadow-2xl
             "
-            onClick={(e) =>
-              e.stopPropagation()
-            }
+            onClick={(e) => e.stopPropagation()}
           >
-
             {/* CLOSE */}
 
             <button
-              onClick={() =>
-                setIsBuyModalOpen(false)
-              }
+              type="button"
+              onClick={() => setIsBuyModalOpen(false)}
               className="
                 absolute
                 top-5
@@ -666,7 +1359,6 @@ Thank you.
                 transition
               "
             >
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -677,13 +1369,11 @@ Thank you.
               >
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
-
             </button>
 
             {/* HEADING */}
 
-            <div className="mb-7">
-
+            <div className="mb-7 pr-8">
               <span
                 className="
                   inline-flex
@@ -720,23 +1410,18 @@ Thank you.
                   text-[#3E3118]/60
                 "
               >
-                Enter your details and we will
-                connect with you on WhatsApp.
+                Enter customer details and send the enquiry directly on
+                WhatsApp.
               </p>
-
             </div>
 
             {/* FORM */}
 
-            <form
-              onSubmit={handleWhatsApp}
-              className="space-y-5"
-            >
+            <form onSubmit={handleWhatsApp} className="space-y-5">
 
-              {/* NAME */}
+              {/* SALESMAN ID */}
 
               <div>
-
                 <label
                   className="
                     block
@@ -746,16 +1431,62 @@ Thank you.
                     text-[#3E3118]
                   "
                 >
-                  Name
+                  Salesman ID
+                </label>
+
+                <select
+                  value={salesmanId}
+                  onChange={(e) => setSalesmanId(e.target.value)}
+                  required
+                  className="
+                    w-full
+                    h-12
+                    px-4
+                    rounded-xl
+                    border
+                    border-[#3E3118]/15
+                    bg-white
+                    text-[#3E3118]
+                    outline-none
+                    focus:border-[#B68827]
+                    focus:ring-2
+                    focus:ring-[#B68827]/20
+                    transition
+                    cursor-pointer
+                  "
+                >
+                  <option value="" disabled>
+                    Select salesman ID
+                  </option>
+
+                  {salesmanIds.map((id) => (
+                    <option key={id} value={id}>
+                      {id}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* CUSTOMER NAME */}
+
+              <div>
+                <label
+                  className="
+                    block
+                    mb-2
+                    text-sm
+                    font-medium
+                    text-[#3E3118]
+                  "
+                >
+                  Customer Name
                 </label>
 
                 <input
                   type="text"
                   value={customerName}
-                  onChange={(e) =>
-                    setCustomerName(e.target.value)
-                  }
-                  placeholder="Enter your name"
+                  onChange={(e) => setCustomerName(e.target.value)}
+                  placeholder="Enter customer name"
                   required
                   className="
                     w-full
@@ -773,13 +1504,11 @@ Thank you.
                     transition
                   "
                 />
-
               </div>
 
-              {/* PHONE */}
+              {/* CUSTOMER PHONE */}
 
               <div>
-
                 <label
                   className="
                     block
@@ -789,18 +1518,19 @@ Thank you.
                     text-[#3E3118]
                   "
                 >
-                  Phone Number
+                  Customer Phone Number
                 </label>
 
                 <input
                   type="tel"
                   value={customerPhone}
                   onChange={(e) =>
-                    setCustomerPhone(e.target.value)
+                    setCustomerPhone(
+                      e.target.value.replace(/\D/g, "").slice(0, 10)
+                    )
                   }
-                  placeholder="Enter your phone number"
+                  placeholder="Enter 10-digit phone number"
                   required
-                  pattern="[0-9]{10}"
                   maxLength="10"
                   inputMode="numeric"
                   className="
@@ -819,7 +1549,94 @@ Thank you.
                     transition
                   "
                 />
+              </div>
 
+              {/* GST */}
+
+              <div>
+                <label
+                  className="
+                    block
+                    mb-2
+                    text-sm
+                    font-medium
+                    text-[#3E3118]
+                  "
+                >
+                  GST No.
+                  <span className="ml-1 text-[#3E3118]/45 font-normal">
+                    (Optional)
+                  </span>
+                </label>
+
+                <input
+                  type="text"
+                  value={customerGST}
+                  onChange={(e) =>
+                    setCustomerGST(
+                      e.target.value.toUpperCase().slice(0, 15)
+                    )
+                  }
+                  placeholder="Enter GST number"
+                  maxLength="15"
+                  className="
+                    w-full
+                    h-12
+                    px-4
+                    rounded-xl
+                    border
+                    border-[#3E3118]/15
+                    bg-white
+                    text-[#3E3118]
+                    outline-none
+                    focus:border-[#B68827]
+                    focus:ring-2
+                    focus:ring-[#B68827]/20
+                    transition
+                  "
+                />
+              </div>
+
+              {/* QUANTITY */}
+
+              <div>
+                <label
+                  className="
+                    block
+                    mb-2
+                    text-sm
+                    font-medium
+                    text-[#3E3118]
+                  "
+                >
+                  Quantity
+                </label>
+
+                <input
+                  type="number"
+                  value={quantity}
+                  onChange={(e) => setQuantity(e.target.value)}
+                  placeholder="Enter quantity"
+                  required
+                  min="1"
+                  step="1"
+                  inputMode="numeric"
+                  className="
+                    w-full
+                    h-12
+                    px-4
+                    rounded-xl
+                    border
+                    border-[#3E3118]/15
+                    bg-white
+                    text-[#3E3118]
+                    outline-none
+                    focus:border-[#B68827]
+                    focus:ring-2
+                    focus:ring-[#B68827]/20
+                    transition
+                  "
+                />
               </div>
 
               {/* PRODUCT */}
@@ -833,13 +1650,7 @@ Thank you.
                   p-4
                 "
               >
-
-                <p
-                  className="
-                    text-xs
-                    text-[#3E3118]/55
-                  "
-                >
+                <p className="text-xs text-[#3E3118]/55">
                   Product
                 </p>
 
@@ -853,6 +1664,27 @@ Thank you.
                   {product.name}
                 </p>
 
+                <div className="mt-3 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-[#3E3118]/55">
+                      Category
+                    </p>
+
+                    <p className="text-sm font-medium text-[#3E3118]">
+                      {product.category}
+                    </p>
+                  </div>
+
+                  <div className="text-right">
+                    <p className="text-xs text-[#3E3118]/55">
+                      Quantity
+                    </p>
+
+                    <p className="text-sm font-semibold text-[#3E3118]">
+                      {quantity}
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* SEND BUTTON */}
@@ -875,7 +1707,6 @@ Thank you.
                   transition-all
                 "
               >
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -886,13 +1717,9 @@ Thank you.
                 </svg>
 
                 Send on WhatsApp
-
               </button>
-
             </form>
-
           </div>
-
         </div>
       )}
 
@@ -913,11 +1740,8 @@ Thank you.
             backdrop-blur-sm
             px-5
           "
-          onClick={() =>
-            setIsVideoModalOpen(false)
-          }
+          onClick={() => setIsVideoModalOpen(false)}
         >
-
           <div
             className="
               relative
@@ -928,17 +1752,11 @@ Thank you.
               bg-black
               shadow-2xl
             "
-            onClick={(e) =>
-              e.stopPropagation()
-            }
+            onClick={(e) => e.stopPropagation()}
           >
-
-            {/* CLOSE */}
-
             <button
-              onClick={() =>
-                setIsVideoModalOpen(false)
-              }
+              type="button"
+              onClick={() => setIsVideoModalOpen(false)}
               className="
                 absolute
                 z-10
@@ -956,7 +1774,6 @@ Thank you.
                 transition
               "
             >
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -967,10 +1784,7 @@ Thank you.
               >
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
-
             </button>
-
-            {/* VIDEO */}
 
             <video
               src={product.video}
@@ -983,9 +1797,7 @@ Thank you.
                 object-contain
               "
             />
-
           </div>
-
         </div>
       )}
 
