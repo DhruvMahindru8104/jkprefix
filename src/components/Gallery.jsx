@@ -230,6 +230,7 @@ const ProductImage = ({ image, name, slug }) => {
         <motion.img
           src={image}
           alt={name}
+          loading="lazy"
           whileHover={{
             scale: 1.07,
           }}

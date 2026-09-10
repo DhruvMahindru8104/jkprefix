@@ -539,6 +539,7 @@ export default function HeroSection() {
             <img
               src={wallPutty}
               alt="Wall Putty"
+              loading="lazy"
               className="
                 w-full
                 h-full
@@ -576,6 +577,7 @@ export default function HeroSection() {
             <img
               src={wallFinish}
               alt="Tile Adhesive"
+              loading="lazy"
               className="
                 w-full
                 h-full
