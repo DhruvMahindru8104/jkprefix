@@ -1,1 +1,0 @@
-VITE_GOOGLE_SHEET_URL=https://script.google.com/macros/s/AKfycbz9sZZ49eSlzFx5N56ea3_66s30eHHZsGl0CD3e-boDQDMArlclDFlVhiAtC7_3LRYwDw/exec
