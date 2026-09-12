@@ -638,25 +638,70 @@ const ProductDetails = () => {
      WHATSAPP
   ======================================================= */
 
-  const handleWhatsApp = (e) => {
-    e.preventDefault();
+  const handleWhatsApp = async (e) => {
+  e.preventDefault();
+  console.log("Google Sheet URL:", import.meta.env.VITE_GOOGLE_SHEET_URL);
 
-    if (
-      !customerName.trim() ||
-      !customerPhone.trim() ||
-      !salesmanId ||
-      !quantity
-    ) {
-      alert("Please fill all required details.");
-      return;
-    }
+  if (
+    !customerName.trim() ||
+    !customerPhone.trim() ||
+    !salesmanId ||
+    !quantity
+  ) {
+    alert("Please fill all required details.");
+    return;
+  }
 
-    if (customerPhone.length !== 10) {
-      alert("Please enter a valid 10-digit phone number.");
-      return;
-    }
+  if (customerPhone.length !== 10) {
+    alert("Please enter a valid 10-digit phone number.");
+    return;
+  }
 
-    const message = `
+  // ==========================================
+  // DATA TO SEND TO GOOGLE SHEETS
+  // ==========================================
+
+  const enquiryData = {
+    salesmanId: salesmanId,
+    customerName: customerName.trim(),
+    customerPhone: customerPhone,
+    customerGST: customerGST.trim(),
+    product: product.name,
+    category: product.category,
+    quantity: quantity,
+  };
+
+  // ==========================================
+  // SEND DATA TO GOOGLE SHEETS
+  // ==========================================
+
+  try {
+    await fetch(import.meta.env.VITE_GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(enquiryData),
+    });
+
+    console.log("Enquiry sent to Google Sheets");
+
+  } catch (error) {
+    console.error("Google Sheets error:", error);
+
+    alert(
+      "There was a problem saving the enquiry. Please try again."
+    );
+
+    return;
+  }
+
+  // ==========================================
+  // WHATSAPP MESSAGE
+  // ==========================================
+
+  const message = `
 Hello JKPRIFIX Team,
 
 Product: ${product.name}
@@ -670,25 +715,27 @@ Salesman ID: ${salesmanId}
 Please share the price and availability.
 
 Thank you.
-    `.trim();
+  `.trim();
 
-    const whatsappNumber = "918872316415";
+  const whatsappNumber = "918872316415";
 
-    const whatsappURL =
-      `https://wa.me/${whatsappNumber}?text=` +
-      encodeURIComponent(message);
+  const whatsappURL =
+    `https://wa.me/${whatsappNumber}?text=` +
+    encodeURIComponent(message);
 
-    window.open(whatsappURL, "_blank");
+  window.open(whatsappURL, "_blank");
 
-    /* RESET FORM */
+  // ==========================================
+  // RESET FORM
+  // ==========================================
 
-    setIsBuyModalOpen(false);
-    setCustomerName("");
-    setCustomerPhone("");
-    setSalesmanId("");
-    setCustomerGST("");
-    setQuantity(1);
-  };
+  setIsBuyModalOpen(false);
+  setCustomerName("");
+  setCustomerPhone("");
+  setSalesmanId("");
+  setCustomerGST("");
+  setQuantity(1);
+};
 
   /* =======================================================
      PRODUCT NOT FOUND
