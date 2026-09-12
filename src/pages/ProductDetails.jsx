@@ -640,8 +640,7 @@ const ProductDetails = () => {
 
   const handleWhatsApp = async (e) => {
   e.preventDefault();
-  console.log("Google Sheet URL:", import.meta.env.VITE_GOOGLE_SHEET_URL);
-
+ 
   if (
     !customerName.trim() ||
     !customerPhone.trim() ||
